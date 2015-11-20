@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load materialize %}
+
+
+    {% block head %}
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text text-lighten-2">MY PENIS TEMPLATE</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">PENIS PENIS PENIS</h5>
+        </div>
+        <div class="row center">
+          <a class='dropdown-button btn' data-beloworigin="false" href='#' data-activates='dropdown1'>Drop Me!</a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">three</a></li>
+            </ul>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'background1.jpg' %}" alt="Unsplashed background img 1"></div>
+    {% endblock %}
+
+
+{% block content %}
+<h1> title</h1> 
+
+    {{user}}
+    {{request.user}}
+
+<form method = "POST" > {% csrf_token %}
+  {{ form.email|as_material: "s12" }}
+  <input type = "submit" value = "Sign Up!">
+</form>
+{% endblock %}
+
+{% block head_title %}
+    Gabriel | 
+{% endblock %}
